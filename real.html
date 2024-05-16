@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Data Display</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js">
+    </script>
+</head>
+
+<body>
+    <h1>Real-time Data Display</h1>
+    <ul id="data-list"></ul>
+    <script>
+        // Connect to the Flask-SocketIO server
+        const socket = io.connect('http://localhost:5000');
+        // Event handler for receiving data updates
+        socket.on('update', function (data) {
+            console.log("Received update from server");
+            const dataList = JSON.parse(data);
+            const dataListElement = document.getElementById('data-list');
+            dataListElement.innerHTML = '';
+            dataList.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = JSON.stringify(item);
+                dataListElement.appendChild(listItem);
+            });
+        });
+        
+        
+    </script>
+    
+
+</body>
+
+</html>
