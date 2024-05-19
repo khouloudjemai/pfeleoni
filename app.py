@@ -21,7 +21,7 @@ db = client["database"]
 collection = db["position"]
 post_collection = db["post"]  # New collection named "post"
  
-Lad = Lad('test' , 12)
+# Lad = Lad('test' , 12)
 # Custom JSON encoder to handle ObjectId serialization
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
