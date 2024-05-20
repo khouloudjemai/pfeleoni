@@ -12,7 +12,7 @@
     <title>Real-time Data Display</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js">
     </script>
-    <script src="custom.js"></script>
+    <script src="./custom.js?v=<?php echo time(); ?>"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -101,7 +101,7 @@
                                 <input type="text" class="form-control" id="tabellaVariant" name="tabellaVariant">
                             </div>
                             <div class="form-group">
-                                <label for="typeOfKaba">Type of Kaba:</label>
+                                <label for="typeOfKaba">Type de kaba et paviol:</label>
                                 <input type="text" class="form-control" id="typeOfKaba" name="typeOfKaba">
                             </div>
                             <div class="form-group">
@@ -135,18 +135,22 @@
                                 <input type="number" class="form-control" id="minQty" name="minQty">
                             </div>
                             <div class="form-group">
-                                <label for="positionX">Position X:</label>
-                                <input type="number" class="form-control" id="positionX" name="positionX">
+                                <label for="minQty">Max Qty:</label>
+                                <input type="number" class="form-control" id="maxQty" name="maxQty">
                             </div>
                             <div class="form-group">
-                                <label for="positionY">Position Y:</label>
-                                <input type="number" class="form-control" id="positionY" name="positionY">
+                     <!-- #region -->            <label for="poste">Poste:</label>
+                                <input type="number" class="form-control" id="poste" name="poste">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">position:</label>
+                                <input type="number" class="form-control" id="position" name="position">
                             </div>
                             <div class="form-group">
                                 <label for="qtyPerLoop">Qty per Loop:</label>
                                 <input type="number" class="form-control" id="qtyPerLoop" name="qtyPerLoop">
                             </div>
-                        </div>
+                        </div> 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
 

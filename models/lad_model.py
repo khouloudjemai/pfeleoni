@@ -14,11 +14,11 @@ else:
 
 
 class Lad:
-    def __init__(self, lad, poste, position, Type_de_kaba_et_paviol, name, qty_per_loop, temp, hum, min_qty, max_qty):
+    def __init__(self, lad  , poste , position , Type_de_kaba_et_paviol , name , qty_per_loop , temp , hum , min_qty , max_qty ):
         self.lad = lad
         self.poste = poste
-        self.position = position
-        self.Type_de_kaba_et_paviol = Type_de_kaba_et_paviol
+        self.position =position
+        self.Type_de_kaba_et_paviol =Type_de_kaba_et_paviol
         self.name = name
         self.qty_per_loop = qty_per_loop
         self.min_qty = min_qty

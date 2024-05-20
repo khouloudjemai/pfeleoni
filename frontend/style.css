@@ -1,44 +1,49 @@
-.white {
+.WS {
     background-color: #FDFFC2;
     color: black;
 }
+.SW {
 
-.brown {
+    color: #FDFFC2;
+    background-color: black;
+}
+
+.BR {
     color: #fff;
     background-color: #9B3922;
 }
 
-.blue {
+.BL {
     color: #fff;
 
     background-color: #1679AB;
 }
 
-.green {
+.GR {
     color: #fff;
 
     background-color: #14AE5C;
 }
 
-.yellow {
+.GE {
     color: #000;
 
     background-color: #FCDC2A;
 }
 
-.red {
+.RT {
     color: #fff;
 
     background-color: #C40C0C;
 }
 
-.orange {
+.GN {
     color: #fff;
 
     background-color: #FF6E31;
 }
 
-.magenta {
+.VI {
     color: #fff;
 
     background-color: #AB6088;
@@ -182,6 +187,10 @@ span.wire {
     color: #f12020;
     background-color: #eeadad;
 
+}
+.max {
+    color: #0000ff;
+    background-color: #a2b0ff;
 }
 
 .safe {
