@@ -1,15 +1,17 @@
-from flask import Flask, request,render_template,redirect,jsonify
+from flask import Flask, request, render_template, redirect, jsonify
 from bson import ObjectId  # Import ObjectId from bson module
 from pymongo import MongoClient
 import json
 from flask_cors import CORS
-from lad_model import Lad
-
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
 import time
 import threading
 from bson.json_util import dumps
+from models.lad_model import Lad
+from models.position_model import Position
+from models.user_model import User
+from models.post_model import Post
 
 app = Flask(__name__)
 CORS(app)
@@ -20,9 +22,10 @@ client = MongoClient("mongodb://localhost:27017/")
 db = client["database"]
 collection = db["position"]
 post_collection = db["post"]  # New collection named "post"
- 
-Lad = Lad('test' , 12)
+
 # Custom JSON encoder to handle ObjectId serialization
+
+
 class JSONEncoder(json.JSONEncoder):
     def default(self, o):
         if isinstance(o, ObjectId):
@@ -30,6 +33,8 @@ class JSONEncoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, o)
 
 # Endpoint to insert data
+
+
 @app.route('/insert', methods=['POST'])
 def insert_data():
     data = request.json  # Assuming JSON data is sent
@@ -70,6 +75,8 @@ def display_data_by_id(id):
     return JSONEncoder().encode(data), 200
 
 # Endpoint to display all data
+
+
 @app.route('/display/all', methods=['GET'])
 def display_all_data():
     data = []
@@ -77,8 +84,6 @@ def display_all_data():
     for doc in collection.find():
         data.append(doc)
     return JSONEncoder().encode(data), 200
-
-
 
 
 @app.route('/update_post', methods=['POST'])
@@ -104,7 +109,6 @@ def update_post():
     return jsonify({'message': 'Humidity and temperature updated successfully'}), 200
 
 
-
 # Simulated real-time data generator
 def generate_data():
     while True:
@@ -113,10 +117,12 @@ def generate_data():
         socketio.emit('realtime_data', data)
         time.sleep(1)  # Send data every second
 
+
 # Start the data generator in a separate thread
 thread = threading.Thread(target=generate_data)
 thread.daemon = True
 thread.start()
+
 
 @app.route('/')
 def index():
@@ -127,36 +133,26 @@ def index():
 
 def emit_post_data():
     while True:
-        # Retrieve data from the "post" collection and emit it
         data = dumps(list(post_collection.find()))
         socketio.emit('update_post', data)
-        time.sleep(1)  # Emit data every second
+        time.sleep(1)
 
-# Start the function in a separate thread
+
 post_thread = threading.Thread(target=emit_post_data)
 post_thread.daemon = True
 post_thread.start()
+
+
 def emit_data():
     data = dumps(list(collection.find()))
     socketio.emit('update', data)
-# @app.route('/update/<ObjectId:id>', methods=['GET', 'POST','update'])
-# def update_task(id):
-#     task = collection.find_one({'_id': id})
-    
-#     if request.method == 'POST':
-#         title = request.form['title']
-#         description = request.form['description']
 
-#         collection.update_one({'_id': id}, {'$set': {'title': title, 'description': description}})
-        
-#         return redirect('/')
-    
-#     return render_template('teste.php', task=task)
 
 @socketio.on('connect')
 def handle_connect():
     emit_data()
     print('Client connected')
+
 
 def listen_for_changes():
     with collection.watch() as change_stream:
@@ -165,12 +161,8 @@ def listen_for_changes():
             emit_data()
 
 
-
-
-
 if __name__ == '__main__':
     import threading
     change_listener_thread = threading.Thread(target=listen_for_changes)
     change_listener_thread.start()
     socketio.run(app, debug=True, host="0.0.0.0", port=5000)
-
