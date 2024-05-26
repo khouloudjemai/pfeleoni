@@ -55,113 +55,81 @@
     </div>
 
     <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="container mt-5">
-                <h2 class="mb-4">Insert Data Form</h2>
-                <form id="insertForm">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="customerPartNumber">Customer Part Number:</label>
-                                <input type="text" class="form-control" id="customerPartNumber"
-                                    name="customerPartNumber">
-                            </div>
-                            <div class="form-group">
-                                <label for="idWagon">ID Wagon:</label>
-                                <input type="text" class="form-control" id="idWagon" name="idWagon">
-                            </div>
-                            <div class="form-group">
-                                <label for="idWorkStation">ID Work Station:</label>
-                                <input type="text" class="form-control" id="idWorkStation" name="idWorkStation">
-                            </div>
-                            <div class="form-group">
-                                <label for="leoniPartNumber">Leoni Part Number:</label>
-                                <input type="text" class="form-control" id="leoniPartNumber" name="leoniPartNumber">
-                            </div>
-                            <div class="form-group">
-                                <label for="loop">Loop:</label>
-                                <input type="number" class="form-control" id="loop" name="loop">
-                            </div>
-                            <div class="form-group">
-                                <label for="position">Position:</label>
-                                <input type="text" class="form-control" id="position" name="position">
-                            </div>
-                            <div class="form-group">
-                                <label for="section">Section:</label>
-                                <input type="text" class="form-control" id="section" name="section">
-                            </div>
-                            <div class="form-group">
-                                <label for="supermarketLocation">Supermarket Location:</label>
-                                <input type="number" class="form-control" id="supermarketLocation"
-                                    name="supermarketLocation">
-                            </div>
-                            <div class="form-group">
-                                <label for="tabellaVariant">Tabella/Variant:</label>
-                                <input type="text" class="form-control" id="tabellaVariant" name="tabellaVariant">
-                            </div>
-                            <div class="form-group">
-                                <label for="typeOfKaba">Type de kaba et paviol:</label>
-                                <input type="text" class="form-control" id="typeOfKaba" name="typeOfKaba">
-                            </div>
-                            <div class="form-group">
-                                <label for="updateDate">UPDATE Date:</label>
-                                <input type="text" class="form-control" id="updateDate" name="updateDate">
-                            </div>
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="container mt-5">
+            <h2 class="mb-4">Insert Data Form</h2>
+            <form id="insertForm">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="kurzname">Kurzname:</label>
+                            <input type="text" class="form-control" id="kurzname" name="kurzname">
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="weight">Weight (gr):</label>
-                                <input type="text" class="form-control" id="weight" name="weight">
-                            </div>
-                            <div class="form-group">
-                                <label for="weightPerLoop">Weight per Loop (gr):</label>
-                                <input type="number" class="form-control" id="weightPerLoop" name="weightPerLoop">
-                            </div>
-                            <div class="form-group">
-                                <label for="barreCode">Barre Code:</label>
-                                <input type="text" class="form-control" id="barreCode" name="barreCode">
-                            </div>
-                            <div class="form-group">
-                                <label for="color">Color:</label>
-                                <input type="text" class="form-control" id="color" name="color">
-                            </div>
-                            <div class="form-group">
-                                <label for="kurzname">Kurzname:</label>
-                                <input type="text" class="form-control" id="kurzname" name="kurzname">
-                            </div>
-                            <div class="form-group">
-                                <label for="minQty">Min Qty:</label>
-                                <input type="number" class="form-control" id="minQty" name="minQty">
-                            </div>
-                            <div class="form-group">
-                                <label for="minQty">Max Qty:</label>
-                                <input type="number" class="form-control" id="maxQty" name="maxQty">
-                            </div>
-                            <div class="form-group">
-                     <!-- #region -->            <label for="poste">Poste:</label>
-                                <input type="number" class="form-control" id="poste" name="poste">
-                            </div>
-                            <div class="form-group">
-                                <label for="position">position:</label>
-                                <input type="number" class="form-control" id="position" name="position">
-                            </div>
-                            <div class="form-group">
-                                <label for="qtyPerLoop">Qty per Loop:</label>
-                                <input type="number" class="form-control" id="qtyPerLoop" name="qtyPerLoop">
-                            </div>
-                        </div> 
+                        <div class="form-group">
+                            <label for="leoniPartNumber">Leoni Part Number:</label>
+                            <input type="text" class="form-control" id="leoniPartNumber" name="leoniPartNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPartNumber">Customer Part Number:</label>
+                            <input type="text" class="form-control" id="customerPartNumber" name="customerPartNumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="typeOfKaba">Type de kaba et paviol:</label>
+                            <input type="text" class="form-control" id="typeOfKaba" name="typeOfKaba">
+                        </div>
+                        <div class="form-group">
+                            <label for="lad">LAD:</label>
+                            <input type="text" class="form-control" id="lad" name="lad">
+                        </div>
+                        <div class="form-group">
+                            <label for="poste">Poste:</label>
+                            <input type="number" class="form-control" id="poste" name="poste">
+                        </div>
+                        <div class="form-group">
+                            <label for="position">Position:</label>
+                            <input type="text" class="form-control" id="position" name="position">
+                        </div>
+                        <div class="form-group">
+                            <label for="color">Couleur:</label>
+                            <select class="form-control" id="color" name="color">
+                                <option value="WS">Blanc</option>
+                                <option value="SW">Noir</option>
+                                <option value="BR">Maroon</option>
+                                <option value="BL">Blue</option>
+                                <option value="GR">Green</option>
+                                <option value="GE">Jaune</option>
+                                <option value="RT">Rouge</option>
+                                <option value="GN">Orange</option>
+                                <option value="VI">Violet</option>
+                            </select>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-
-                </form>
-
-                <button onclick="closeModal()" class="btn btn-primary">close</button>
-
-            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="qtyPerLoop">Qty per Loop:</label>
+                            <input type="number" class="form-control" id="qtyPerLoop" name="qtyPerLoop">
+                        </div>
+                        <div class="form-group">
+                            <label for="minQty">Min Qty:</label>
+                            <input type="number" class="form-control" id="minQty" name="minQty">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (gr):</label>
+                            <input type="text" class="form-control" id="weight" name="weight">
+                        </div>
+                        <div class="form-group">
+                            <label for="maxQty">Max Qty:</label>
+                            <input type="number" class="form-control" id="maxQty" name="maxQty">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <button onclick="closeModal()" class="btn btn-primary">Close</button>
         </div>
     </div>
-
+</div>
 
 
 </body>

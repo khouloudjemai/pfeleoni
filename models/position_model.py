@@ -11,7 +11,6 @@ if collection_name not in db.list_collection_names():
 else:
     positioon_collection = db[collection_name]
 
-# Define Post model fields
 
 
 class Position:

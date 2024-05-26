@@ -10,7 +10,6 @@ if collection_name not in db.list_collection_names():
     print("Collection '{}' created successfully.".format(collection_name))
 else:
     lad_collection = db[collection_name]
-# Define Post model fields
 
 
 class Post:
