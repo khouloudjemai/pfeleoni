@@ -168,7 +168,7 @@ socket.on('update', function (data) {
                 const gridItem = document.createElement('div');
                 gridItem.classList.add('grid-item');
                 gridItem.innerHTML = `
-            <button class="addbutton" onclick="openModal(${item['poste']},${item['position'] + 1})"> + </button> `
+            <button class="addbutton" onclick="openModal(${item['Poste']},${item['position'] + 1})"> + </button> `
                 gridContainer.appendChild(gridItem);
 
             }
@@ -239,55 +239,48 @@ window.onclick = function (event) {
     }
 };
 document.addEventListener("DOMContentLoaded", function () {
-
     document.getElementById("insertForm").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent the default form submission
 
-        const formData = new FormData(this);
-        // const data = {};
-        // formData.forEach((value, key) => {
-        //     data[key] = value;
-        // });
-
         const data = {
-            "Customer part number": document.getElementById('customerPartNumber').value,
-            "Leoni partnumber": document.getElementById('customerPartNumber').value,
-            "Type de kaba et paviol": document.getElementById('type_de_Kaba_et_paviol').value,
-            "UPDATE": document.getElementById('updateDate').value,
-            "Weight (gr)": document.getElementById('weight').value,
-            "Weight per Loop (gr)": document.getElementById('weightPerLoop').value,
-            "barre code": document.getElementById('barreCode').value,
-            "Couleur": document.getElementById('color').value,
             "kurzname": document.getElementById('kurzname').value,
+            "Leoni partnumber": document.getElementById('leoniPartNumber').value,
+            "Customer part number": document.getElementById('customerPartNumber').value,
+            "Type de kaba et paviol": document.getElementById('typeOfKaba').value,
+            "LAD": document.getElementById('lad').value,
+            "Poste": document.getElementById('poste').value,
+            "Position": document.getElementById('position').value,
+            "Couleur": document.getElementById('color').value,
+            "qty per loop": document.getElementById('qtyPerLoop').value,
             "min qty": document.getElementById('minQty').value,
-            "poste": document.getElementById('poste').value,
-            "position": document.getElementById('position').value,
-            "qty per loop": document.getElementById('qtyPerLoop').value
-        }
-            *
-            fetch('http://localhost:5000/insert', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Data inserted successfully:', data);
-                    closeModal();
-                    // Optionally, you can display a success message or redirect the user
-                })
-                .catch(error => {
-                    console.error('There was a problem with the fetch operation:', error);
-                    // Optionally, you can display an error message to the user
-                });
+            "Weight (gr)": document.getElementById('weight').value,
+            "max qty": document.getElementById('maxQty').value
+        };
+
+        fetch('http://localhost:5000/insert', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Data inserted successfully:', data);
+            closeModal();
+            // Optionally, you can display a success message or redirect the user
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            // Optionally, you can display an error message to the user
+        });
     });
 });
+
 
 
