@@ -41,20 +41,33 @@ def insert_data():
 @app.route('/update_qty', methods=['POST'])
 def update_qty():
     data = request.json  # Assuming JSON data is sent
-    customer_part_number = data.get('customer_part_number')
-    qty_per_loop = data.get('qty_per_loop')
+    Leoni_partnumber = data.get('Leoni partnumber')
+    weight = data.get('Weight')
+    
 
-    if customer_part_number is None or qty_per_loop is None:
+
+    if Leoni_partnumber is None or weight is None:
         return jsonify({'error': 'Customer part number or quantity per loop not provided'}), 400
+    singlepeice = collection.find_one({'Leoni partnumber': Leoni_partnumber})
+
+    if singlepeice['Leoni partnumber'] == None : 
+          return jsonify({'message' :'there is no part under this number'}), 404
+        
+    print(singlepeice)
+    singel_piece_w = float(singlepeice['Weight (gr)'].replace(',','.'))
+    poid_kaba = float(singlepeice['poids_kaba'].replace(',','.'))
+
+
+    qty = int((float(weight) - poid_kaba) / float(singel_piece_w))
 
     # Update quantity per loop for the given customer part number
     result = collection.update_one(
-        {'Customer part number': customer_part_number},
-        {'$set': {'qty per loop': qty_per_loop}}
+        {'Leoni partnumber': Leoni_partnumber},
+        {'$set': {'qty per loop': qty}}
     )
 
     if result.modified_count == 0:
-        return jsonify({'error': 'No matching document found for the provided customer part number'}), 404
+        return jsonify({'message' :'Unchanged quantities per loop'}), 200
 
     return jsonify({'message': 'Quantity per loop updated successfully'}), 200
 
