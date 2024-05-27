@@ -57,8 +57,8 @@ def update_qty():
           return jsonify({'message' :'there is no part under this number'}), 404
         
     print(singlepeice)
-    singel_piece_w = float(singlepeice['Weight (gr)'].replace(',','.'))
-    poid_kaba = float(singlepeice['poids_kaba'].replace(',','.'))
+    singel_piece_w = float(str(singlepeice['Weight (gr)']).replace(',','.'))
+    poid_kaba = float(str(singlepeice['poids_kaba']).replace(',','.'))
 
 
     qty = int((float(weight) - poid_kaba) / float(singel_piece_w))
