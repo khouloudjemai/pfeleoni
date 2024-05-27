@@ -64,31 +64,38 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="kurzname">Kurzname:</label>
-                            <input type="text" class="form-control" id="kurzname" name="kurzname">
+                            <input required type="text" class="form-control" id="kurzname" name="kurzname">
                         </div>
                         <div class="form-group">
                             <label for="leoniPartNumber">Leoni Part Number:</label>
-                            <input type="text" class="form-control" id="leoniPartNumber" name="leoniPartNumber">
+                            <input required type="text" class="form-control" id="leoniPartNumber" name="leoniPartNumber">
                         </div>
                         <div class="form-group">
                             <label for="customerPartNumber">Customer Part Number:</label>
-                            <input type="text" class="form-control" id="customerPartNumber" name="customerPartNumber">
+                            <input required type="text" class="form-control" id="customerPartNumber" name="customerPartNumber">
                         </div>
                         <div class="form-group">
-                            <label for="typeOfKaba">Type de kaba et paviol:</label>
-                            <input type="text" class="form-control" id="typeOfKaba" name="typeOfKaba">
+                            <label for="typeOfKaba">Type de position:</label>
+                            <select class="form-control" id="typeOfKaba" name="typeOfKaba"> 
+                                <option value="KABA0"> KABA0</option>
+                                <option value="KABA1"> KABA1</option>
+                                <opion value="KABA2">KABA2 </opion>
+                                <option value="KABA3"> KABA3</option>
+                                <option value="PAVIOL"> PAVIOL</option>
+
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="lad">LAD:</label>
-                            <input type="text" class="form-control" id="lad" name="lad">
+                            <input required type="text" class="form-control" id="lad" name="lad">
                         </div>
                         <div class="form-group">
                             <label for="poste">Poste:</label>
-                            <input type="number" class="form-control" id="poste" name="poste">
+                            <input required type="number" class="form-control" id="poste" name="poste">
                         </div>
                         <div class="form-group">
                             <label for="position">Position:</label>
-                            <input type="text" class="form-control" id="position" name="position">
+                            <input required type="text" class="form-control" id="position" name="position">
                         </div>
                         <div class="form-group">
                             <label for="color">Couleur:</label>
@@ -108,19 +115,23 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="qtyPerLoop">Qty per Loop:</label>
-                            <input type="number" class="form-control" id="qtyPerLoop" name="qtyPerLoop">
+                            <input required type="number" class="form-control" id="qtyPerLoop" name="qtyPerLoop">
                         </div>
                         <div class="form-group">
                             <label for="minQty">Min Qty:</label>
-                            <input type="number" class="form-control" id="minQty" name="minQty">
+                            <input required type="number" class="form-control" id="minQty" name="minQty">
                         </div>
                         <div class="form-group">
                             <label for="weight">Weight (gr):</label>
-                            <input type="text" class="form-control" id="weight" name="weight">
+                            <input required type="text" class="form-control" id="weight" name="weight">
                         </div>
                         <div class="form-group">
                             <label for="maxQty">Max Qty:</label>
-                            <input type="number" class="form-control" id="maxQty" name="maxQty">
+                            <input required type="number" class="form-control" id="maxQty" name="maxQty">
+                        </div>
+                        <div class="form-group">
+                            <label for="poids_kaba">Poid de Kaba:</label>
+                            <input required type="text" class="form-control" id="poids_kaba" name="poids_kaba">
                         </div>
                     </div>
                 </div>

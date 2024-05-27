@@ -247,14 +247,16 @@ document.addEventListener("DOMContentLoaded", function () {
             "Leoni partnumber": document.getElementById('leoniPartNumber').value,
             "Customer part number": document.getElementById('customerPartNumber').value,
             "Type de kaba et paviol": document.getElementById('typeOfKaba').value,
-            "LAD": document.getElementById('lad').value,
-            "Poste": document.getElementById('poste').value,
-            "Position": document.getElementById('position').value,
+            "LAD": Number(document.getElementById('lad').value),
+            "Poste":Number(document.getElementById('poste').value),
+            "position":Number(document.getElementById('position').value),
             "Couleur": document.getElementById('color').value,
-            "qty per loop": document.getElementById('qtyPerLoop').value,
-            "min qty": document.getElementById('minQty').value,
-            "Weight (gr)": document.getElementById('weight').value,
-            "max qty": document.getElementById('maxQty').value
+            "qty per loop": Number(document.getElementById('qtyPerLoop').value),
+            "min qty": Number(document.getElementById('minQty').value),
+            "Weight (gr)": Number(document.getElementById('weight').value),
+            "max qty": Number(document.getElementById('maxQty').value),
+            "poids_kaba": Number(document.getElementById('poids_kaba').value)
+
         };
 
         fetch('http://localhost:5000/insert', {
